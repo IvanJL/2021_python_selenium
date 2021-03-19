@@ -15,5 +15,5 @@ def get_login_error(wait: WebDriverWait) -> str:
     :param wait:  Instance of web driver wait.
     :return: Error message
     """
-    locator = (By.XPATH, "//*[@data-test='error']")
+    locator = (By.XPATH, "//*[@data-tests='error']")
     return get_text(wait, locator)

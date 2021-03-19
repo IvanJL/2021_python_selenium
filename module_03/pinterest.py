@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from common.webdriver_factory import get_driver
 
 def login(wait: WebDriverWait, email, my_pass):
-    login_locator = (By.XPATH, "//*[@data-test-id='simple-login-button']//button")
+    login_locator = (By.XPATH, "//*[@data-tests-id='simple-login-button']//button")
     login_btn = wait.until(EC.element_to_be_clickable(login_locator))
     login_btn.click()
 
@@ -19,20 +19,20 @@ def login(wait: WebDriverWait, email, my_pass):
     password.clear()
     password.send_keys(my_pass)
 
-    submit_btn_locator = (By.XPATH, "//*[@data-test-id='registerFormSubmitButton']//button")
+    submit_btn_locator = (By.XPATH, "//*[@data-tests-id='registerFormSubmitButton']//button")
     submit_btn = wait.until(EC.element_to_be_clickable(submit_btn_locator))
     submit_btn.click()
 
 
 def search(wait: WebDriverWait, value: str):
-    textbox_locator = (By.XPATH, "//*[@data-test-id='search-box-input']")
+    textbox_locator = (By.XPATH, "//*[@data-tests-id='search-box-input']")
     textbox = wait.until(EC.element_to_be_clickable(textbox_locator))
     textbox.clear()
     textbox.send_keys(value)
     textbox.send_keys(Keys.ENTER)
 
 def get_elements(wait: WebDriverWait):
-    tag_array = (By.XPATH, "//*[@data-test-id='search-guide']")
+    tag_array = (By.XPATH, "//*[@data-tests-id='search-guide']")
     return wait.until(EC.visibility_of_all_elements_located(tag_array))
 
 def print_results_tags(wait: WebDriverWait):
