@@ -14,3 +14,4 @@ class SelectElement(BasePageElement):
         """Get instance of select."""
         element = self.wait_until_loaded()
         return Select(element)
+
