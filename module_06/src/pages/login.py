@@ -5,7 +5,6 @@ from module_06.src.locators.login import LoginPageLoc
 from module_06.src.pages.base_page import BasePage
 from module_06.src.pages.inventory import InventoryPage
 
-
 _URL = 'https://www.saucedemo.com/'
 
 
@@ -31,3 +30,6 @@ class LoginPage(BasePage):
         :return: Error message
         """
         return self.__error_msg.get_text()
+
+    def get_login_btn(self):
+        return self.__login

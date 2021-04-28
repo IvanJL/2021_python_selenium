@@ -1,4 +1,4 @@
-
+"""Element"""
 """Abstraction to interact with inventory items."""
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait

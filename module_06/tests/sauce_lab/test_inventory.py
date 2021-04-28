@@ -4,11 +4,8 @@ from module_06.src.pages.inventory import InventorySortOptions
 from module_06.src.pages.login import LoginPage
 from module_06.tests.common.test_base import TestBase
 
-
 _DEF_USER = 'standard_user'
-
 _DEF_PASSWORD = 'secret_sauce'
-
 VALID_PRICES = ['$29.99', '$9.99', '$15.99', '$49.99', '$7.99', '$15.99']
 
 
@@ -34,6 +31,16 @@ class TestInventory(TestBase):
         login.open()
         inventory = login.login(_DEF_USER, _DEF_PASSWORD)
         assert inventory.get_label() == 'Products', 'Inventory page label should be Products'
+
+    # Test Ivan
+    def test_items_addremove(self):
+        """This is to test items functionality on catalog"""
+        login = LoginPage(self.driver)
+        login.open()
+        inventory_page = login.login(_DEF_USER, _DEF_PASSWORD)
+        for item in inventory_page.products:
+            item.add_to_cart()
+            item.remove_from_cart()
 
     def test_sort(self):
         """Test sort products"""

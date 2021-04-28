@@ -7,7 +7,7 @@ from module_06.src.elements.inventory_items import InventoryItems
 from module_06.src.elements.select_element import SelectElement
 from module_06.src.locators.inventory import InventoryPageLoc
 from module_06.src.pages.base_page import BasePage
-
+from module_06.src.pages.cart import CartPage
 
 _URL = 'https://www.saucedemo.com/inventory.html'
 
@@ -34,6 +34,10 @@ class InventoryPage(BasePage):
         """Get page label."""
         return self.__label.get_text()
 
+    def open_cart(self):
+        self.header.goto_cart()
+        return CartPage(self._wait._driver, self._wait._timeout)
+
     def sort_by(self, option: InventorySortOptions):
         """Sort by specified value"""
         self.__sort_dropdown.select_by_value(option.value)
@@ -41,3 +45,12 @@ class InventoryPage(BasePage):
     def get_sort_value(self) -> str:
         """Get select sort value."""
         return self.__sort_dropdown.get_selected_value()
+
+    def get_menu(self):
+        return self.header.open_menu()
+
+    def click_cart(self):
+        return self.header.goto_cart()
+
+    def logout(self):
+        return self.header.logout()

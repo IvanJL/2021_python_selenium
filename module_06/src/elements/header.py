@@ -3,6 +3,7 @@ from module_06.src.elements.base_page_element import BasePageElement
 from module_06.src.locators.header import HeaderLoc
 
 
+
 class Header:
     """Represents inventory item."""
 
@@ -11,6 +12,7 @@ class Header:
         self._link = BasePageElement(HeaderLoc.LINK, wait=wait)
         self._badge = BasePageElement(HeaderLoc.BADGE, wait=wait)
         self._burger_btn = BasePageElement(HeaderLoc.BURGER_BTN, wait=wait)
+        self._logout_btn = BasePageElement(HeaderLoc.LOGOUT_BTN, wait=wait)
 
     def get_total_cart_items(self) -> int:
         """Get total items in cart"""
@@ -20,9 +22,13 @@ class Header:
             return 0
 
     def goto_cart(self):
-        """Go to cart."""
+        """Go to cart. crear objeto Cart Page """
         self._link.click()
+
 
     def open_menu(self):
         """Open menu"""
         self._burger_btn.click()
+
+    def logout(self):
+        self._logout_btn.click()

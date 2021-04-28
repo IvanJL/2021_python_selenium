@@ -1,11 +1,9 @@
 """Test cases for inventory item"""
 from module_06.src.elements.inventory_item import InventoryItem
-from module_06.src.pages.inventory import InventorySortOptions
 from module_06.src.pages.login import LoginPage
 from module_06.tests.common.test_base import TestBase
 
 _DEF_USER = 'standard_user'
-
 _DEF_PASSWORD = 'secret_sauce'
 
 
@@ -28,3 +26,4 @@ class TestInventoryDetails(TestBase):
         details_page.back()
         inventory_page.products.reload()
         assert len(inventory_page.products) == 6, 'Inventor len should be 6'
+
