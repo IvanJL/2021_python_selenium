@@ -10,3 +10,5 @@ class CartLoc:
     CTN_SHOPPING = (By.ID , "continue-shopping")
     REMOVE_BUTTON = (By.ID, "remove-sauce-labs-backpack")
     CART_ITEMS = (By.CLASS_NAME, "cart_item")
+    CHECKOUT_BTN = (By.ID, "checkout")
+

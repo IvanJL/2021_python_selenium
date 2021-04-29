@@ -1,6 +1,4 @@
 """Test Cases from Cart"""
-import pytest
-
 from module_06.src.pages.login import LoginPage
 from module_06.tests.common.test_base import TestBase
 
@@ -15,9 +13,9 @@ class TestCart(TestBase):
         login = LoginPage(self.driver)
         login.open()
         inventory = login.login(_DEF_USER, _DEF_PASSWORD)
-        cart = inventory.click_cart()
-        assert cart.get_title() == 'YOUR CART', 'Cart page label should be "YOUR CART"'
-        cart.back_shopping()
+        cart_page = inventory.open_cart()
+        assert cart_page.get_title() == 'YOUR CART', 'Cart page label should be "YOUR CART"'
+        cart_page.back_shopping()
         assert inventory.get_label() == 'PRODUCTS', 'Inventory page label should be Products'
 
     # Ivan Test: Remove Items from the cart

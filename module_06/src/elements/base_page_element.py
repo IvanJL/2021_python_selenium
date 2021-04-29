@@ -38,6 +38,8 @@ class BasePageElement:
         return element.get_attribute('value')
 
     def get_text(self) -> str:
-        """Get value attribute."""
+        """Get value attribute.
+        :rtype: object
+        """
         element = self.wait_until_loaded()
         return element.text

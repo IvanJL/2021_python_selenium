@@ -3,7 +3,6 @@ from module_06.src.elements.base_page_element import BasePageElement
 from module_06.src.locators.header import HeaderLoc
 
 
-
 class Header:
     """Represents inventory item."""
 
@@ -24,7 +23,6 @@ class Header:
     def goto_cart(self):
         """Go to cart. crear objeto Cart Page """
         self._link.click()
-
 
     def open_menu(self):
         """Open menu"""

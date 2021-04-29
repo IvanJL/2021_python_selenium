@@ -5,7 +5,6 @@ from module_06.src.locators.cart_items import CartItemLoc
 from module_06.src.mixin.InventoryItemMixin import InventoryItemMixin
 
 
-
 class CartInventoryItem(InventoryItemMixin):
     def __init__(self, wait: WebDriverWait, root: WebElement):
         self._wait = wait
@@ -13,4 +12,3 @@ class CartInventoryItem(InventoryItemMixin):
         self._description = BasePageElement(CartItemLoc.DESCRIPTION, wait=wait, root=root)
         self._price = BasePageElement(CartItemLoc.PRICE, wait=wait, root=root)
         self._inv_btn = BasePageElement(CartItemLoc.BTN, wait=wait, root=root)
-
