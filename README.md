@@ -1,20 +1,4 @@
 # 2021_python_selenium
 Python selenium course
-<<<<<<< HEAD
-<<<<<<< HEAD
-Test
-dsdsdsdsdsdsds
 
-Test 
-
-Test
-=======
-test 1
-test2 
-test3
->>>>>>> parent of 976b017 (Revert "TEST ADD")
-=======
-
-This is an updatecxcxcxcx
->>>>>>> d59d4496a3b16b85b7763b27acf9dbc2b6621967
-this is the test for yash
+This is an update
