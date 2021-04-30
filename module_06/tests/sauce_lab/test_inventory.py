@@ -30,7 +30,7 @@ class TestInventory(TestBase):
         login = LoginPage(self.driver)
         login.open()
         inventory = login.login(_DEF_USER, _DEF_PASSWORD)
-        assert inventory.get_label() == 'Products', 'Inventory page label should be Products'
+        assert inventory.get_label() == 'PRODUCTS', 'Inventory page label should be Products'
 
     # Test Ivan
     def test_items_addremove(self):
